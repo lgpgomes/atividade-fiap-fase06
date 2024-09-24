@@ -1,0 +1,10 @@
+.dashboard {
+    display: flex;
+    flex-direction: row;
+}
+
+.dashboard .content {
+    padding: 20px;
+    width: 100%;
+    background-color: var(--main-text-light);
+}
