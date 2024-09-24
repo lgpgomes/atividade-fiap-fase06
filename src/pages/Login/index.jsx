@@ -1,19 +1,21 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./login.css";
 
 function Login({ onLogin }) {
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Lógica de autenticação simulada
     if (email && password) {
       onLogin(); // Chama a função passada via props
-      navigate("/"); // Redireciona para o Dashboard
+      // Redirecionar para o Dashboard
+      navigate("/dashboard");
     }
   };
 
@@ -47,7 +49,7 @@ function Login({ onLogin }) {
                   />
                 </div>
                 <div className="links">
-                  <a href="cadastro.html">Criar uma conta</a>
+                  <Link to="/cadastro">Criar uma conta</Link>
                 </div>
                 <div>
                   <button id="btn_login" className="btn" type="submit">

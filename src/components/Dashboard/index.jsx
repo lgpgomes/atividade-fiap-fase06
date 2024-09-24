@@ -1,15 +1,16 @@
-import { Routes, Route } from 'react-router-dom';
-import Sidebar from './Sidebar';
-import Monitoramento from './Monitoramento';
-import PraticasAgricolas from './PraticasAgricolas';
-import Mercado from './Mercado';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Sidebar from '../Sidebar';
+import Monitoramento from '../../pages/Monitoramento';
+import PraticasAgricolas from '../../pages/PraticasAgricolas';
+import Mercado from '../../pages/Mercado';
 
 function Dashboard() {
   return (
-    <div className="dashboard">
+    <div className="dashboard" style={{display: "flex", flexDirection: "row"}}>
       <Sidebar />
-      <div className="content">
+      <div className="content" style={{ padding: '20px', width: '100%' }}>
         <Routes>
+        <Route path="/" element={<Navigate to="/dashboard/monitoramento/*" />} />
           <Route path="monitoramento/*" element={<Monitoramento />} />
           <Route path="praticas-agricolas/*" element={<PraticasAgricolas />} />
           <Route path="mercado/*" element={<Mercado />} />
