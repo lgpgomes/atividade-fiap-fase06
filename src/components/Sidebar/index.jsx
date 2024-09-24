@@ -1,38 +1,28 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import "./Sidebar.css";
+import MenuLink from "../MenuLink";
 
 function Sidebar() {
-    const navigate = useNavigate();
-    const handleLogout = () => {
-        // Limpar o estado de autenticação aqui se necessário
-        // Exemplo: localStorage.removeItem('token');
-        
-        navigate('/login'); // Redireciona para a página de login
-      };
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    // Limpar o estado de autenticação aqui se necessário
+    // Exemplo: localStorage.removeItem('token');
+
+    navigate("/login"); // Redireciona para a página de login
+  };
   return (
-    <div
-      style={{
-        width: "200px",
-        backgroundColor: "#fff",
-        height: "100vh",
-        padding: "10px",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-      }}
-    >
+    <div className="sidebar">
       <h2>Menu</h2>
-      <ul style={{ listStyleType: "none", padding: 0 }}>
-        <li>
-          <Link to="/dashboard/monitoramento">Monitoramento</Link>
-        </li>
-        <li>
-          <Link to="/dashboard/praticas-agricolas">Práticas Agrícolas</Link>
-        </li>
-        <li>
-          <Link to="/dashboard/mercado">Mercado</Link>
-        </li>
+      <ul className="menu-links">
+        <MenuLink to="/dashboard/monitoramento">Monitoramento</MenuLink>
+        <MenuLink to="/dashboard/praticas-agricolas">
+          Práticas Agrícolas
+        </MenuLink>
+        <MenuLink to="/dashboard/mercado">Mercado</MenuLink>
       </ul>
-      <button onClick={handleLogout}>Sair</button>
+      <button className="btn" onClick={handleLogout}>
+        Sair        
+      </button>
     </div>
   );
 }
