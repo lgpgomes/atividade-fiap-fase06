@@ -23,13 +23,13 @@ function Sidebar() {
       <h2>Menu</h2>
       <ul style={{ listStyleType: "none", padding: 0 }}>
         <li>
-          <Link to="/monitoramento">Monitoramento</Link>
+          <Link to="/dashboard/monitoramento">Monitoramento</Link>
         </li>
         <li>
-          <Link to="/praticas-agricolas">Práticas Agrícolas</Link>
+          <Link to="/dashboard/praticas-agricolas">Práticas Agrícolas</Link>
         </li>
         <li>
-          <Link to="/mercado">Mercado</Link>
+          <Link to="/dashboard/mercado">Mercado</Link>
         </li>
       </ul>
       <button onClick={handleLogout}>Sair</button>
