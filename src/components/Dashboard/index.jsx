@@ -7,7 +7,7 @@ import "./Dashboard.css"
 
 function Dashboard() {
   return (
-    <div className="dashboard" style={{display: "flex", flexDirection: "row"}}>
+    <div className="dashboard">
       <Sidebar />
       <div className="content">
         <Routes>
