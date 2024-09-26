@@ -14,6 +14,7 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<Login onLogin={onLogin} />} />
         <Route path="/login" element={<Login onLogin={onLogin} />} />
         <Route path="/cadastro" element={<Cadastro />} />
         <Route
