@@ -5,6 +5,7 @@ import PraticasAgricolas from '../../pages/PraticasAgricolas';
 import Mercado from '../../pages/Mercado';
 import "./Dashboard.css"
 
+
 function Dashboard() {
   return (
     <div className="dashboard">
