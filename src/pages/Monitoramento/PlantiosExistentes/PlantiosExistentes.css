@@ -1,0 +1,65 @@
+.plantios-existentes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.plantios-existentes h3 {
+    font-size: 18px;
+    color: #184015;
+    font-weight: 600;
+}
+
+
+.plantios {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.plantio {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 2px solid #184015;
+    border-radius: 10px;
+    padding: 30px;
+    height: 450px;
+    justify-content: space-between;
+    width: 300px;
+}
+
+.plantio-img {
+    display: flex;
+    justify-content: center;
+}
+
+.plantio-img img {
+    max-height: 135px;
+}
+
+.plantio-nome, .plantio-area{
+    font-size: 16px;
+    font-weight: 600;
+    color: #184015;
+    text-align: center;
+}
+
+.plantio-recomendacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: #184015;
+}
+
+
+.plantio-recomendacoes .recomendacoes-titulo {
+    font-size: 16px ;
+    color: #184015;
+    font-weight: 600;
+}
+
+.plantio-recomendacoes li {
+    margin-left: 15px;
+}

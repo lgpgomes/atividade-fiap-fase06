@@ -12,8 +12,8 @@ function Dashboard() {
       <Sidebar />
       <div className="content">
         <Routes>
-        <Route path="/" element={<Navigate to="/dashboard/monitoramento/*" />} />
-          <Route path="monitoramento/*" element={<Monitoramento />} />
+          <Route path="/" element={<Navigate to="/dashboard/monitoramento" />} />
+          <Route path="monitoramento" element={ <Monitoramento />} />
           <Route path="praticas-agricolas/*" element={<PraticasAgricolas />} />
           <Route path="mercado/*" element={<Mercado />} />
         </Routes>

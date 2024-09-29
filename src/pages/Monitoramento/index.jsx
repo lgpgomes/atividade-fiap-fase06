@@ -1,42 +1,56 @@
-import { useEffect, useState} from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import "./Monitoramento.css"
+import { useState} from "react";
 import CadastroLavoura from "./CadastroLavoura";
 import DadosSolo from "./DadosSolo";
 import PlantiosExistentes from "./PlantiosExistentes";
 
 function Monitoramento() {
-  const [initialized, setInitialized] = useState(false);
 
-  const navigate = useNavigate();
-  useEffect(() => {
-    if (!initialized) {
-      navigate("cadastro-lavoura"); // Redireciona apenas na primeira carga
-      setInitialized(true); // Marca como inicializado
+  const [contentActive, setContentActive] = useState('cadastrar_lavoura');
+  
+  const renderContent = () => {
+    switch (contentActive) {
+      case 'cadastrar_lavoura':
+        return <CadastroLavoura/>;
+      case 'dados_do_solo':
+        return <DadosSolo/>;
+      case 'plantios_existentes':
+        return <PlantiosExistentes/>;
+      default:
+        return null;
     }
-  }, [initialized, navigate]);
+  };
 
   return (
-    <div>
-      <h1>Monitoramento</h1>
-
-      {/* Menu de funcionalidades para navegar dentro de Monitoramento */}
-      <nav>
-        <button onClick={() => navigate("/dashboard/monitoramento/cadastro-lavoura")}>
-          Cadastro de Lavoura
-        </button>
-        <button onClick={() => navigate("/dashboard/monitoramento/dados-solo")}>Dados do Solo</button>
-        <button onClick={() => navigate("/dashboard/monitoramento/plantios-existentes")}>
-          Plantios Existentes
-        </button>
+    <div className="monitoramento">
+      <nav className="menu-monitoramento">
+          <button 
+          onClick={() => setContentActive('cadastrar_lavoura') }
+          className={contentActive == 'cadastrar_lavoura' ? 'on' : ''} 
+          >
+              Cadastrar de Lavoura
+          </button>
+          <button 
+          onClick={() => setContentActive('dados_do_solo') }
+          className={contentActive == 'dados_do_solo' ? 'on' : ''} 
+          >
+              Dados do Solo
+          </button>
+          <button 
+          onClick={() => setContentActive('plantios_existentes') }
+          className={contentActive == 'plantios_existentes' ? 'on' : ''} 
+          >
+              Plantios Existentes
+          </button>
       </nav>
 
-      {/* Conteúdo dinâmico das funcionalidades */}
-      <Routes>
-        <Route path="cadastro-lavoura" element={<CadastroLavoura />} />
-        <Route path="dados-solo" element={<DadosSolo />} />
-        <Route path="plantios-existentes" element={<PlantiosExistentes />} />
-      </Routes>
+      <div className="monitoramento-conteudo">
+        {renderContent()}
+      </div>
+        
+
     </div>
+
   );
 }
 

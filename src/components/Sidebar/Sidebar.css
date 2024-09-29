@@ -12,6 +12,7 @@
 
 .sidebar h2 {
   color: var(--main-text-light);
+  padding-top: 30px;
 }
 
 .sidebar .menu-links {
