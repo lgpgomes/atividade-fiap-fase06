@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Routes, Route, useNavigate, NavLink } from "react-router-dom";
 import PlantiosRecomendados from "./PlantiosRecomendados";
 import CadastrarPlantios from "./CadastrarPlantios";
+import "./PraticasAgricolas.css";
 
 function PraticasAgricolas() {
   const [initialized, setInitialized] = useState(false);
@@ -15,27 +16,37 @@ function PraticasAgricolas() {
   }, [initialized, navigate]);
 
   return (
-    <div>
-      <h1>Práticas Agrícolas</h1>
+    <div className="plantio_wrapper">
+      <div className="praticas_agricolas">
+        {/* Menu de funcionalidades para navegar dentro de Práticas Agrícolas */}
+        <nav className="group-btn">
+          <NavLink
+            className={({ isActive }) =>
+              [isActive ? "activeLink" : "disabledLink"].join(" ")
+            }
+            to={"plantios-recomendados"}
+          >
+            Plantios Recomendados
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              [isActive ? "activeLink" : "disabledLink"].join(" ")
+            }
+            to={"cadastrar-plantios"}
+          >
+            Cadastrar Plantios
+          </NavLink>
+        </nav>
 
-      {/* Menu de funcionalidades para navegar dentro de Práticas Agrícolas */}
-      <nav>
-        <button onClick={() => navigate("plantios-recomendados")}>
-          Plantios Recomendados
-        </button>
-        <button onClick={() => navigate("cadastrar-plantios")}>
-          Cadastrar Plantios
-        </button>
-      </nav>
-
-      {/* Conteúdo dinâmico das funcionalidades */}
-      <Routes>
-        <Route
-          path="plantios-recomendados"
-          element={<PlantiosRecomendados />}
-        />
-        <Route path="cadastrar-plantios" element={<CadastrarPlantios />} />
-      </Routes>
+        {/* Conteúdo dinâmico das funcionalidades */}
+          <Routes>
+            <Route
+              path="plantios-recomendados"
+              element={<PlantiosRecomendados />}
+            />
+            <Route path="cadastrar-plantios" element={<CadastrarPlantios />} />
+          </Routes>
+      </div>
     </div>
   );
 }

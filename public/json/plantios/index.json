@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "id": "01",
+      "terreno": {
+        "tamanho": "2 hectares",
+        "plantio": "Milho"
+      },
+      "recomendacoes": [
+        "Usar plantas de cobertura: Plantar grama ou outras plantas que protegem o solo, ajudam a manter a umidade e evitam erosão.",
+        "Trocar o plantio com outras culturas: Alternar o milho com outras plantas, como feijão, para deixar o solo mais saudável e economizar adubo.",
+        "Evitar mexer muito no solo: Plantar o milho sem arar o solo, o que ajuda a manter a terra firme e evita que ela se desgaste"
+      ]
+    },
+    {
+      "id": "02",
+      "terreno": {
+        "tamanho": "1 hectare",
+        "plantio": "Café"
+      },
+      "recomendacoes": [
+        "Plantar árvores junto com o café: Plantar árvores ao lado do café para proteger o solo, melhorar o clima e ajudar o café a crescer melhor.",
+        "Aproveitar os restos da colheita: Usar cascas de café e folhas como adubo natural para o solo.",
+        "Usar pesticidas naturais: Aplicar produtos naturais, como extratos de plantas, para combater pragas sem prejudicar o meio ambiente."
+      ]
+    },
+    {
+      "id": "03",
+      "terreno": {
+        "tamanho": "1 hectare",
+        "plantio": "Milho"
+      },
+      "recomendacoes": [
+        "Usar estufas ou cobrir as plantas: Proteger os tomates com estufas ou plásticos para evitar pragas e melhorar o crescimento.",
+        "Adubar com líquidos naturais: Usar fertilizantes líquidos naturais, como água com nutrientes de compostagem, para ajudar o tomate a crescer forte.",
+        "Regar direto nas raízes: Usar sistemas de irrigação que colocam água direto nas raízes do tomate, economizando água e evitando doenças nas folhas."
+      ]
+    }
+  ]
+}

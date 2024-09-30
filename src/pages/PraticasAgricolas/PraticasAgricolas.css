@@ -1,0 +1,79 @@
+.plantio_content {
+    display: flex;
+    align-content: center;
+}
+
+.plantio_wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.praticas_agricolas .group-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.group-btn {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.group-btn a , .btn{
+    cursor: pointer;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 8px;
+    font-family: "Inter", sans-serif;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+.group-btn .activeLink {
+    background-color: var(--main-text-color);
+    color: var(--main-text-light);
+}
+
+.group-btn .disabledLink {
+    background-color: var(--secondary-bg-color);
+    color: var(--secondary-text-input);
+}
+
+.cadastrarPlantio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid var(--main-text-color);
+    color: var(--main-text-color);
+}
+
+.cadastrarPlantio form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px;
+}
+
+.cadastrarPlantio h2 {
+    text-align: center;
+    font-size: 24px;
+}
+
+.cadastrarPlantio input {
+    max-width: 450px;
+    width: 100%;
+    background-color: #e1ffff21;
+    color: var(--main-text-color);
+    padding: 16px 20px;
+    border-radius: 8px;
+    border: 1px solid black;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+}
+
+form .btn {
+    background-color: var(--main-text-color);
+    color: var(--main-text-light);
+}
