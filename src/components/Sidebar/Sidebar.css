@@ -1,8 +1,7 @@
 .sidebar {
   width: 400px;
   background-color: var(--main-bg-color);
-  height: 100vh;
-  padding: 10px;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -12,6 +11,7 @@
 
 .sidebar h2 {
   color: var(--main-text-light);
+  padding-top: 30px;
 }
 
 .sidebar .menu-links {

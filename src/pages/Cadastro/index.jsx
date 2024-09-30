@@ -40,7 +40,6 @@ function Cadastro() {
                   </select>
 
                   <input
-                    value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     type="email"
                     id="email"
@@ -50,7 +49,6 @@ function Cadastro() {
                   />
 
                   <input
-                    value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     type="password"
                     id="password"
@@ -60,10 +58,9 @@ function Cadastro() {
                   />
                   
                   <input
-                    value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     type="password"
-                    id="password"
+                    id="repeatPassword"
                     name="password"
                     placeholder="Confirme a senha"
                     required

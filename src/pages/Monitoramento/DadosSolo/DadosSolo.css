@@ -1,0 +1,166 @@
+.dados-solo {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #184015;
+    border-radius: 15px;
+    padding: 40px;
+}
+
+.dados-solo h3 {
+    font-size: 18px;
+    color: #184015;
+    font-weight: 600;
+}
+
+.dados-solo-conteudo {
+    display: flex;
+    height: max-content;
+}
+
+.dados-solo-grafico {
+    position: relative;
+    margin: 20px 0;
+}
+
+.dados-solo-grafico #plantImg {
+    max-width: 200px;
+    z-index: 2;
+    position: relative;
+}
+
+.dados-solo-grafico .line {
+    max-height: max-content;
+    width: 100px;
+
+}
+
+.dados-solo-informacao {
+    position: absolute;
+    width: max-content;
+}
+
+.dados-solo-informacao#nutrientes {
+    top: 10%;
+    right: 130%;
+}
+
+.dados-solo-informacao#nutrientes .line {
+    position: absolute;
+    top: 0;
+    left: 105%;
+    bottom: 0;
+    margin: auto;
+}
+
+.dados-solo-informacao#umidade {
+    top: 10%;
+    left: 130%;
+}
+
+.dados-solo-informacao#umidade .line {
+    position: absolute;
+    top: 0;
+    right: 105%;
+    bottom: 0;
+    margin: auto;
+    transform: scaleX(-1);
+}
+
+.dados-solo-informacao#temperatura {
+    bottom: 10%;
+    right: 130%;
+}
+
+.dados-solo-informacao#temperatura .line {
+    position: absolute;
+    top: 0;
+    left: 105%;
+    bottom: 0;
+    margin: auto;
+    transform: scaleX(-1);
+    rotate: 180deg;
+}
+
+
+.dados-solo-informacao#ph {
+    bottom: 10%;
+    left: 130%;
+}
+
+.dados-solo-informacao#ph .line {
+    position: absolute;
+    top: 0;
+    right: 105%;
+    bottom: 0;
+    margin: auto;
+    rotate: 180deg;
+}
+
+
+.dados-solo-caixa {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #184015;
+    padding: 6px;
+    border-radius: 4px;
+
+}
+
+.dados-solo-titulo {
+    font-size: 12px;
+    font-weight: 600;
+    color: #184015;
+}
+
+.dados-solo-descricao {
+    font-size: 14px;
+    color: #184015;
+    
+}
+
+.dados-solo-recomendacoes {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dados-solo-recomendacoes ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.recomendacoes {
+    display: flex;
+    flex-direction: column;
+    background-color: #B4D1B2A3;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    padding: 15px 30px;
+    width: 65%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.dados-solo-recomendacoes .recomendacoes-titulo {
+    font-size: 14px;
+    font-weight: 600;
+    color: #184015;
+
+}
+
+.recomendacoes-conteudo {
+    font-size: 12px;
+    color: #184015;
+    text-align: center;
+}
+
+.recomendacoes-conteudo li {
+    list-style-position: inside;
+}

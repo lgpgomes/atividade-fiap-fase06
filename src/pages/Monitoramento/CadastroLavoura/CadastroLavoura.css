@@ -1,0 +1,98 @@
+.cadastro-lavoura {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #184015;
+    border-radius: 15px;
+    padding: 40px;
+}
+
+.cadastro-lavoura h3 {
+    font-size: 18px;
+    color: #184015;
+    font-weight: 600;
+}
+
+
+.formulario-cadastro {
+    display: flex;
+    flex-direction: column;
+    max-width: 60%;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.formulario-cadastro form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+.formulario-cadastro input {
+    display: flex;
+    background: none;
+    padding: 12px 10px;
+    outline: none;
+    border: 2px solid #184015;
+    border-radius: 6px;
+    color: #184015;
+    width: 100%;
+    font-weight: 500;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+}
+
+.formulario-cadastro input::placeholder {
+    font-size: 14px;
+    color: #184015a1;
+    font-family: Inter, sans-serif;
+    line-height: 1;
+}
+
+.formulario-cadastro label {
+    display: flex;
+    font-weight: 500;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 16px;
+    color: #184015;
+}
+
+.formulario-campos {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.formulario-botao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35px;
+}
+
+.formulario-botao button {
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #184015;
+    background: #184015;
+    text-decoration: none;
+    color: #a1bf9f;
+    font-size: 16px;
+    cursor: pointer;
+    width: 60%;
+}
+
+.formulario-mensagem {
+    display: flex;
+    justify-content: center;
+    color: #184015;
+    margin-top: 20px;
+}

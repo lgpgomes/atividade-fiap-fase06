@@ -1,3 +1,4 @@
+/* <<<<<<< HEAD
 .plantio_content {
     display: flex;
     align-content: center;
@@ -38,6 +39,7 @@
     background-color: var(--secondary-bg-color);
     color: var(--secondary-text-input);
 }
+    ======= */
 
 .cadastrarPlantio {
     display: flex;
@@ -74,6 +76,52 @@
 }
 
 form .btn {
+    cursor: pointer;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 8px;
+    font-family: "Inter", sans-serif;
+    font-size: 17px;
+    text-decoration: none;
     background-color: var(--main-text-color);
     color: var(--main-text-light);
+}
+
+.praticas-agricolas {
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: 100%;
+}
+
+.menu-praticas-agricolas {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.menu-praticas-agricolas a {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #184015;
+    background: #184015b0;
+    text-decoration: none;
+    color: #a1bf9f;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.menu-praticas-agricolas a.on {
+    background: #184015;
+}
+
+.praticas-agricolas-conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+/* >>>>>>> f24f40d1c2d13e6ecb228ff1dd46add100d7ab2c */
 }

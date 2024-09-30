@@ -6,11 +6,13 @@ import Dashboard from "./components/Dashboard";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  console.log("oi")
   const onLogin = () => {
     // Atualizar o estado de autenticação
+
+    console.log(isAuthenticated)
     setIsAuthenticated(true);
   };
+  
   return (
     <Router>
       <Routes>
