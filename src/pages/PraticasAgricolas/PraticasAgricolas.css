@@ -1,0 +1,37 @@
+.praticas-agricolas {
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: 100%;
+}
+
+.menu-praticas-agricolas {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.menu-praticas-agricolas button {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #184015;
+    background: #184015b0;
+    text-decoration: none;
+    color: #a1bf9f;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.menu-praticas-agricolas button.on {
+    background: #184015;
+}
+
+.praticas-agricolas-conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}

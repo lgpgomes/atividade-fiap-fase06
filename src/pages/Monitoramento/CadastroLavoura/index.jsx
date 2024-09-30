@@ -6,43 +6,43 @@ function CadastroLavoura() {
   const [cadastrado, setCadastrado] = useState(false);
   function handleCadastrar (e) {
     e.preventDefault()
+
     setCadastrado(true);
     
     setTimeout(function () {
       setCadastrado(false)
     }, 4000);
-
   }
 
   return (
     <div className="cadastro-lavoura">
       <h3>Cadastro lavoura</h3>
       <div className="formulario-cadastro">
-        <form action="">
+        <form onSubmit={handleCadastrar}>
           <div className="formulario-campos">
             <label>
               <div>
                 Área total do terreno
               </div>
-              <input placeholder="10 hectares" type="text" />
+              <input placeholder="10 hectares" type="text" required/>
             </label>
             <label>
               <div>
                 Tipo de plantio
               </div>
-              <input placeholder="Milho" type="text" />
+              <input placeholder="Milho" type="text" required/>
             </label>
             <label>
               <div>
                 Área ocupada pelo plantio
               </div>
-              <input placeholder="8 hectares" type="text" />
+              <input placeholder="8 hectares" type="text" required />
             </label>
           </div>
 
 
           <div className="formulario-botao">
-            <button onClick={handleCadastrar}>
+            <button type="submit">
               Cadastrar
             </button>
           </div>
@@ -51,12 +51,9 @@ function CadastroLavoura() {
 
           
         </form>
-
       </div>
-      
     </div>
 
-    
   );
 }
 

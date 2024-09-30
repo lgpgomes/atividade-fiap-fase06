@@ -1,42 +1,58 @@
-import { useState, useEffect } from 'react';
-import { Routes, Route, useNavigate } from "react-router-dom";
-import PlantiosRecomendados from "./PlantiosRecomendados";
+import "./PraticasAgricolas.css"
+import { useState} from "react";
 import CadastrarPlantios from "./CadastrarPlantios";
+import PlantiosRecomendados from "./PlantiosRecomendados";
 
 function PraticasAgricolas() {
-  const [initialized, setInitialized] = useState(false);
-  const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!initialized) {
-      navigate("plantios-recomendados"); // Redireciona apenas na primeira carga
-      setInitialized(true); // Marca como inicializado
+
+  const [contentActive, setContentActive] = useState('plantios_recomendados');
+  const [plantioSelecionado, setPlantioSelecionado] = useState(null);
+
+  const handleEscolherPlantio = (plantio) => {
+    setPlantioSelecionado(plantio);  
+    setContentActive('cadastrar_plantios'); 
+  };
+
+
+  const renderContent = () => {
+    switch (contentActive) {
+      case 'cadastrar_plantios':
+        return <CadastrarPlantios plantio={plantioSelecionado} />;
+      case 'plantios_recomendados':
+        return <PlantiosRecomendados onEscolher={handleEscolherPlantio} />;
+      default:
+        return null;
     }
-  }, [initialized, navigate]);
+  };
 
   return (
-    <div>
-      <h1>Práticas Agrícolas</h1>
+    <div className="praticas-agricolas">
+      <nav className="menu-praticas-agricolas">
 
-      {/* Menu de funcionalidades para navegar dentro de Práticas Agrícolas */}
-      <nav>
-        <button onClick={() => navigate("plantios-recomendados")}>
-          Plantios Recomendados
-        </button>
-        <button onClick={() => navigate("cadastrar-plantios")}>
-          Cadastrar Plantios
-        </button>
+          <button 
+          onClick={() => setContentActive('plantios_recomendados') }
+          className={contentActive == 'plantios_recomendados' ? 'on' : ''} 
+          >
+              Plantios recomendados
+          </button>
+
+          <button 
+          onClick={() => setContentActive('cadastrar_plantios') }
+          className={contentActive == 'cadastrar_plantios' ? 'on' : ''} 
+          >
+              Cadastrar plantios
+          </button>
+
       </nav>
 
-      {/* Conteúdo dinâmico das funcionalidades */}
-      <Routes>
-        <Route
-          path="plantios-recomendados"
-          element={<PlantiosRecomendados />}
-        />
-        <Route path="cadastrar-plantios" element={<CadastrarPlantios />} />
-      </Routes>
+      <div className="praticas-agricolas-conteudo">
+        {renderContent()}
+      </div>
+        
+
     </div>
+
   );
 }
 

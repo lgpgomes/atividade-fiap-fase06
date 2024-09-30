@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function CadastrarPlantios() {
+function CadastrarPlantios(props) {
   const [plantio, setPlantio] = useState('');
 
   const handleSubmit = (e) => {
@@ -16,7 +16,7 @@ function CadastrarPlantios() {
         <input
           type="text"
           placeholder="Nome do Plantio"
-          value={plantio}
+          value={props.plantio}
           onChange={(e) => setPlantio(e.target.value)}
           required
         />
