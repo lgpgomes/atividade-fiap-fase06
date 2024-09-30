@@ -41,6 +41,10 @@ function Dashboard() {
               }
             />
             <Route
+              path="cadastrar-plantios"
+              element={<CadastrarPlantios />}
+            />
+            <Route
               path="cadastrar-plantios/:plantio"
               element={<CadastrarPlantios />}
             />
