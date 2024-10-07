@@ -28,13 +28,70 @@
       "id": "03",
       "terreno": {
         "tamanho": "1 hectare",
-        "plantio": "Milho"
+        "plantio": "Tomate"
       },
       "recomendacoes": [
         "Usar estufas ou cobrir as plantas: Proteger os tomates com estufas ou plásticos para evitar pragas e melhorar o crescimento.",
         "Adubar com líquidos naturais: Usar fertilizantes líquidos naturais, como água com nutrientes de compostagem, para ajudar o tomate a crescer forte.",
         "Regar direto nas raízes: Usar sistemas de irrigação que colocam água direto nas raízes do tomate, economizando água e evitando doenças nas folhas."
       ]
+    }
+  ],
+
+  "vendedores": [
+    {
+      "id": "01",
+      "nome": "João Silva",
+      "plantio": "Milho",
+      "quantidade": "50kg",
+      "preco": "R$ 4,00/kg",
+      "telefone": "(11) 91234-5678",
+      "contato": "joao.silva@email.com"
+    },
+    {
+      "id": "02",
+      "nome": "Maria Oliveira",
+      "plantio": "Soja",
+      "quantidade": "40kg",
+      "preco": "R$ 4,50/kg",
+      "telefone": "(34) 98765-4321",
+      "contato": "maria.oliveira@email.com"
+    },
+    {
+      "id": "03",
+      "nome": "José Santos",
+      "plantio": "Café",
+      "quantidade": "20kg",
+      "preco": "R$ 30,00/kg",
+      "telefone": "(31) 99876-5432",
+      "contato": "jose.santos@email.com"
+    },
+    {
+      "id": "04",
+      "nome": "Ana Costa",
+      "plantio": "Feijão",
+      "quantidade": "30kg",
+      "preco": "R$ 8,00/kg",
+      "telefone": "(62) 91234-8765",
+      "contato": "ana.costa@email.com"
+    },
+    {
+      "id": "05",
+      "nome": "Carlos Ferreira",
+      "plantio": "Tomate",
+      "quantidade": "25kg",
+      "preco": "R$ 7,00/kg",
+      "telefone": "(21) 98765-1234",
+      "contato": "carlos.ferreira@email.com"
+    },
+    {
+      "id": "06",
+      "nome": "Fernanda Almeida",
+      "plantio": "Mandioca",
+      "quantidade": "60kg",
+      "preco": "R$ 3,20/kg",
+      "telefone": "(11) 98432-2345",
+      "contato": "fernanda.almeida@email.com"
     }
   ]
 }
