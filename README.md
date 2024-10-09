@@ -22,4 +22,4 @@ Este é um projeto React configurado com Vite
 `npm run dev`
 
 Acesse: [http://localhost:5173](http://localhost:5173)
-Versão Online: [https://atividade-fiap-fase06.vercel.app/](https://atividade-fiap-fase06.vercel.app/)
+Versão Online: [https://atividade-fiap-fase06.vercel.app](https://atividade-fiap-fase06.vercel.app/)
