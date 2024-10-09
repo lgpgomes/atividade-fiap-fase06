@@ -9,9 +9,9 @@ Este é um projeto React configurado com Vite
 
 ## Como rodar
 
-1. **Clone o repositório remoto (ou acesse a pasta do projeto localmente):**
+1. **Acesse a pasta do projeto localmente: (caso já esteja ignorar esse passo)**
 
-`git clone https://github.com/lgpgomes/atividade-fiap-fase06.git`
+`cd agrotech`
 
 2. **Instale as dependências:**
 

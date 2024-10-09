@@ -12,7 +12,7 @@ import DadosSolo from "../../pages/Monitoramento/DadosSolo";
 import PlantiosExistentes from "../../pages/Monitoramento/PlantiosExistentes";
 import VenderPlantio from "../../pages/Mercado/VenderPlantio";
 import VerPlantios from "../../pages/Mercado/VerPlantios";
-import plantios from "../../../public/json/plantios/index.json"
+import plantios from "../../../public/json/plantios/index.json";
 
 function Dashboard() {
   const navigator = useNavigate();
@@ -23,7 +23,7 @@ function Dashboard() {
     navigator(`/dashboard/praticas-agricolas/cadastrar-plantios/${plantio}`);
   };
 
-  console.log(plantios.data)
+  console.log(plantios.data);
 
   return (
     <div className="dashboard">
@@ -82,13 +82,17 @@ function Dashboard() {
             {/* Rota de redirecionamento */}
             <Route
               index
-              element={
-                <Navigate to="/dashboard/mercado/vender-plantio" />
-              }
+              element={<Navigate to="/dashboard/mercado/vender-plantio" />}
             />
             {/* Rotas de Mercado */}
-            <Route path="vender-plantio" element={<VenderPlantio tiposPlantios={plantios.data}/>} />
-            <Route path="ver-plantios" element={<VerPlantios plantiosVenda={plantios.vendedores}/>} />
+            <Route
+              path="vender-plantio"
+              element={<VenderPlantio tiposPlantios={plantios.data} />}
+            />
+            <Route
+              path="ver-plantios"
+              element={<VerPlantios plantiosVenda={plantios.vendedores} />}
+            />
           </Route>
         </Routes>
       </div>
