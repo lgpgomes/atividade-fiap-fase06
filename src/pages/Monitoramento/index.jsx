@@ -1,56 +1,36 @@
-import "./Monitoramento.css"
-import { useState} from "react";
-import CadastroLavoura from "./CadastroLavoura";
-import DadosSolo from "./DadosSolo";
-import PlantiosExistentes from "./PlantiosExistentes";
+import "./Monitoramento.css";
+import { Outlet, NavLink } from "react-router-dom";
 
 function Monitoramento() {
-
-  const [contentActive, setContentActive] = useState('cadastrar_lavoura');
-  
-  const renderContent = () => {
-    switch (contentActive) {
-      case 'cadastrar_lavoura':
-        return <CadastroLavoura/>;
-      case 'dados_do_solo':
-        return <DadosSolo/>;
-      case 'plantios_existentes':
-        return <PlantiosExistentes/>;
-      default:
-        return null;
-    }
-  };
-
   return (
     <div className="monitoramento">
       <nav className="menu-monitoramento">
-          <button 
-          onClick={() => setContentActive('cadastrar_lavoura') }
-          className={contentActive == 'cadastrar_lavoura' ? 'on' : ''} 
-          >
-              Cadastrar de Lavoura
-          </button>
-          <button 
-          onClick={() => setContentActive('dados_do_solo') }
-          className={contentActive == 'dados_do_solo' ? 'on' : ''} 
-          >
-              Dados do Solo
-          </button>
-          <button 
-          onClick={() => setContentActive('plantios_existentes') }
-          className={contentActive == 'plantios_existentes' ? 'on' : ''} 
-          >
-              Plantios Existentes
-          </button>
+        <NavLink
+          className={({ isActive }) => [isActive ? "on" : ""].join(" ")}
+          to={"cadastrar-lavoura"}
+        >
+          Cadastrar Lavoura
+        </NavLink>
+
+        <NavLink
+          className={({ isActive }) => [isActive ? "on" : ""].join(" ")}
+          to={"dados-do-solo"}
+        >
+          Dados do Solo
+        </NavLink>
+
+        <NavLink
+          className={({ isActive }) => [isActive ? "on" : ""].join(" ")}
+          to={"plantios-existentes"}
+        >
+          Plantios Existentes
+        </NavLink>
       </nav>
 
       <div className="monitoramento-conteudo">
-        {renderContent()}
+        <Outlet />
       </div>
-        
-
     </div>
-
   );
 }
 

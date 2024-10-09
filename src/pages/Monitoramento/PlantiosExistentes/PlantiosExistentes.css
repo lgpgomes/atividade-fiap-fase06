@@ -14,8 +14,11 @@
 
 .plantios {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .plantio {

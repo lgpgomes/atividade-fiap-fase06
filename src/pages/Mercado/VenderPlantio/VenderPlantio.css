@@ -20,7 +20,7 @@
     font-size: 24px;
 }
 
-.cadastrarPlantio input {
+.cadastrarPlantio input, .cadastrarPlantio select {
     max-width: 450px;
     width: 100%;
     background-color: #e1ffff21;
@@ -30,6 +30,9 @@
     border: 1px solid black;
     font-family: "Inter", sans-serif;
     font-size: 14px;
+}
+.cadastrarPlantio input, .cadastrarPlantio select :focus {
+    outline: none;
 }
 
 form .btn {
@@ -42,42 +45,4 @@ form .btn {
     text-decoration: none;
     background-color: var(--main-text-color);
     color: var(--main-text-light);
-}
-
-.praticas-agricolas {
-    padding: 30px 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    height: 100%;
-}
-
-.menu-praticas-agricolas {
-    display: flex;
-    justify-content: space-between;
-}
-
-
-.menu-praticas-agricolas a {
-    padding: 10px 14px;
-    border-radius: 8px;
-    border: 1px solid #184015;
-    background: #184015b0;
-    text-decoration: none;
-    color: #a1bf9f;
-    font-weight: 500;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.menu-praticas-agricolas a.on {
-    background: #184015;
-}
-
-.praticas-agricolas-conteudo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
 }

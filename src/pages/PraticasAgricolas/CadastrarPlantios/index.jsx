@@ -1,28 +1,43 @@
-import { useState } from 'react';
+import { useState } from "react";
+import { useParams } from "react-router-dom";
 
-function CadastrarPlantios(props) {
-  const [plantio, setPlantio] = useState('');
+function CadastrarPlantios() {
+  const {plantio} = useParams()
+
+  const [plantioCadastrado, setCadastrarPlantio] = useState(plantio)
 
   const handleSubmit = (e) => {
     e.preventDefault();
     alert(`Plantio ${plantio} cadastrado com sucesso!`);
-    setPlantio('');
   };
 
   return (
-    <div>
-      <h2>Cadastrar Plantios</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Nome do Plantio"
-          value={props.plantio}
-          onChange={(e) => setPlantio(e.target.value)}
-          required
-        />
-        <button type="submit">Cadastrar</button>
-      </form>
-    </div>
+      <div className="cadastrarPlantio">
+        <form onSubmit={handleSubmit}>
+          <h2>Cadastrar Plantios</h2>
+          <div>
+            <label htmlFor="tipoPlantio">Tipo de plantio</label>
+            <input
+              id="tipoPlantio"
+              type="text"
+              placeholder=""
+              value={plantioCadastrado}
+              onChange={(e) => setCadastrarPlantio(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="tipoPlantio">Área de plantação</label>
+            <input
+              id="tipoPlantio"
+              type="text"
+              placeholder=""
+              required
+            />
+          </div>
+          <button className="btn" type="submit">Cadastrar</button>
+        </form>
+      </div>
   );
 }
 

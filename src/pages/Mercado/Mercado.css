@@ -1,4 +1,4 @@
-.monitoramento {
+.mercado {
     padding: 30px 40px;
     display: flex;
     flex-direction: column;
@@ -6,12 +6,13 @@
     height: 100%;
 }
 
-.menu-monitoramento {
+.menu-mercado {
     display: flex;
     justify-content: space-between;
 }
 
-.menu-monitoramento a {
+
+.menu-mercado a {
     padding: 10px 14px;
     border-radius: 8px;
     border: 1px solid #184015;
@@ -23,11 +24,11 @@
     cursor: pointer;
 }
 
-.menu-monitoramento a.on {
+.menu-mercado a.on {
     background: #184015;
 }
 
-.monitoramento-conteudo {
+.mercado-conteudo {
     display: flex;
     flex-direction: column;
     justify-content: center;

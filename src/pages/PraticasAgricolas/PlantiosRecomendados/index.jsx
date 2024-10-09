@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import "./PlantiosRecomendados.css"
 import MilhoImg from "/img/milho.png"
 import CafeImg from "/img/cafe.png"
 import TomateImg from "/img/tomate.png"
 
-function PlantiosRecomendados(props) {
+function PlantiosRecomendados({onEscolher}) {
   return (
     <div className="plantios-existentes">
       <h3>
@@ -36,7 +37,7 @@ function PlantiosRecomendados(props) {
             </ul>
           </div>
           <div className="plantio-button">
-            <button onClick={() => props.onEscolher("Milho")}>
+            <button onClick={() => onEscolher("Milho")}>
               Escolher
             </button>
           </div>
@@ -67,7 +68,7 @@ function PlantiosRecomendados(props) {
             </ul>
           </div>
           <div className="plantio-button">
-            <button onClick={() => props.onEscolher("Café")}>
+            <button onClick={() => onEscolher("Café")}>
               Escolher
             </button>
           </div>
@@ -100,7 +101,7 @@ function PlantiosRecomendados(props) {
           </div>
 
           <div className="plantio-button">
-            <button onClick={() => props.onEscolher("Tomate")}>
+            <button onClick={() => onEscolher("Tomate")}>
               Escolher
             </button>
           </div>
