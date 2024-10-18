@@ -1,14 +1,12 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+function CadastrarPlantios({plantioEscolhido}) {
 
-function CadastrarPlantios() {
-  const {plantio} = useParams()
-
-  const [plantioCadastrado, setCadastrarPlantio] = useState(plantio)
+  const [plantioCadastrado, setCadastrarPlantio] = useState(plantioEscolhido)
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Plantio ${plantio} cadastrado com sucesso!`);
+    alert(`Plantio ${plantioEscolhido} cadastrado com sucesso!`);
   };
 
   return (

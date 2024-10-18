@@ -1,19 +1,29 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./cadastro.css";
+import { UserContext } from "../../services/Context";
 
 function Cadastro() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const { setUsuario } = useContext(UserContext);
+
+  const [formData, setFormData] = useState({
+    nome: "",
+    tipoUsuario: "",
+    email: "",
+    telefone: "",
+    senha: "",
+  });
+
+  const handleInputChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simular cadastro
-    if (email && password) {
-      alert("Cadastro realizado com sucesso!");
-      navigate("/login"); // Redireciona para o Login após o cadastro
-    }
+    alert("Cadastro realizado com sucesso!"); // Alerta de sucesso
+    setUsuario(formData); // Atualiza o contexto
+    navigate("/login"); // Redireciona para o Login após o cadastro
   };
 
   return (
@@ -27,42 +37,52 @@ function Cadastro() {
                 <div className="cadastro-inputs">
                   <input
                     type="text"
-                    id="nome"                    
+                    id="nome"
                     name="nome"
                     placeholder="Nome"
+                    value={formData.nome}
+                    onChange={handleInputChange}
                     required
                   />
 
-                  <select name="username" id="username">
+                  <select
+                    name="tipoUsuario"
+                    id="tipoUsuario"
+                    value={formData.tipoUsuario}
+                    onChange={handleInputChange}
+                  >
                     <option>Selecione um tipo de usuário</option>
                     <option>Agricultor</option>
                     <option>Comerciante</option>
                   </select>
 
                   <input
-                    onChange={(e) => setEmail(e.target.value)}
-                    type="email"
                     id="email"
                     name="email"
+                    type="email"
+                    onChange={handleInputChange}
+                    value={formData.email}
                     placeholder="E-mail"
                     required
                   />
 
                   <input
-                    onChange={(e) => setPassword(e.target.value)}
-                    type="password"
-                    id="password"
-                    name="password"
-                    placeholder="Senha"
+                    id="telefone"
+                    name="telefone"
+                    type="tel"
+                    value={formData.telefone}
+                    onChange={handleInputChange}
+                    placeholder="Telefone"
                     required
                   />
-                  
+
                   <input
-                    onChange={(e) => setPassword(e.target.value)}
+                    id="senha"
+                    name="senha"
                     type="password"
-                    id="repeatPassword"
-                    name="password"
-                    placeholder="Confirme a senha"
+                    value={formData.senha}
+                    onChange={handleInputChange}
+                    placeholder="Senha"
                     required
                   />
                 </div>

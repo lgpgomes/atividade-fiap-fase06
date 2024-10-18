@@ -1,21 +1,25 @@
-/* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./login.css";
+import { UserContext } from "../../services/Context";
 
-function Login({ onLogin }) {
+function Login() {
   const navigate = useNavigate();
-
+  const {usuario, setIsAuthenticated} = useContext(UserContext)
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Lógica de autenticação simulada
-    if (email && password) {
-      onLogin(); // Chama a função passada via props
+    if (usuario.email === email && usuario.senha === password) {
+      setIsAuthenticated(true);
       // Redirecionar para o Dashboard
       navigate("/dashboard");
+    } else if (setIsAuthenticated) {
+      alert("Primeiro você deve estar cadastrado!")
+    } else {
+      alert("E-mail ou senha inválidos!")
     }
   };
 

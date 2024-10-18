@@ -1,4 +1,5 @@
-// import { useState} from "react";
+import "./Dashboard.css";
+import { useState } from "react";
 import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import Sidebar from "../Sidebar";
 import Monitoramento from "../../pages/Monitoramento";
@@ -6,7 +7,6 @@ import PraticasAgricolas from "../../pages/PraticasAgricolas";
 import Mercado from "../../pages/Mercado";
 import PlantiosRecomendados from "../../pages/PraticasAgricolas/PlantiosRecomendados";
 import CadastrarPlantios from "../../pages/PraticasAgricolas/CadastrarPlantios";
-import "./Dashboard.css";
 import CadastroLavoura from "../../pages/Monitoramento/CadastroLavoura";
 import DadosSolo from "../../pages/Monitoramento/DadosSolo";
 import PlantiosExistentes from "../../pages/Monitoramento/PlantiosExistentes";
@@ -16,11 +16,12 @@ import plantios from "../../../public/json/plantios/index.json";
 
 function Dashboard() {
   const navigator = useNavigate();
-  // const [plantioSelecionado, setPlantioSelecionado] = useState("");
+  const [plantioSelecionado, setPlantioSelecionado] = useState("");
 
   const handleEscolherPlantio = (plantio) => {
     // Redireciona para a página de cadastro do plantio escolhido
-    navigator(`/dashboard/praticas-agricolas/cadastrar-plantios/${plantio}`);
+    setPlantioSelecionado(plantio);
+    navigator(`/dashboard/praticas-agricolas/cadastrar-plantios`);
   };
 
   console.log(plantios.data);
@@ -70,10 +71,11 @@ function Dashboard() {
                 <PlantiosRecomendados onEscolher={handleEscolherPlantio} />
               }
             />
-            <Route path="cadastrar-plantios" element={<CadastrarPlantios />} />
             <Route
-              path="cadastrar-plantios/:plantio"
-              element={<CadastrarPlantios />}
+              path="cadastrar-plantios"
+              element={
+                <CadastrarPlantios plantioEscolhido={plantioSelecionado} />
+              }
             />
           </Route>
 
@@ -83,7 +85,7 @@ function Dashboard() {
             <Route
               index
               element={<Navigate to="/dashboard/mercado/vender-plantio" />}
-            />
+            />            
             {/* Rotas de Mercado */}
             <Route
               path="vender-plantio"

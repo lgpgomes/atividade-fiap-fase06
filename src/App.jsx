@@ -1,28 +1,24 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
 import Dashboard from "./components/Dashboard";
+import { UserContext } from "./services/Context";
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const onLogin = () => {
-    // Atualizar o estado de autenticação
 
-    console.log(isAuthenticated)
-    setIsAuthenticated(true);
-  };
+  const {isAuthenticated} = useContext(UserContext)
   
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login onLogin={onLogin} />} />
-        <Route path="/login" element={<Login onLogin={onLogin} />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
         <Route
           path="/dashboard/*"
           element={
-            isAuthenticated ? <Dashboard /> : <Login onLogin={onLogin} />
+            isAuthenticated ? <Dashboard /> : <Login />
           }
         />
       </Routes>
