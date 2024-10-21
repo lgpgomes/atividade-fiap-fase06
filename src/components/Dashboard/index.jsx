@@ -12,7 +12,7 @@ import DadosSolo from "../../pages/Monitoramento/DadosSolo";
 import PlantiosExistentes from "../../pages/Monitoramento/PlantiosExistentes";
 import VenderPlantio from "../../pages/Mercado/VenderPlantio";
 import VerPlantios from "../../pages/Mercado/VerPlantios";
-import plantios from "../../assets/plantios";
+import plantios from "../../assets/json";
 import { UserContext } from "../../services/Context";
 
 function Dashboard() {
