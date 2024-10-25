@@ -39,34 +39,30 @@
   ],
   "vendedores": [
     {
-      "id": "01",
       "nome": "João Silva",
       "plantio": "Milho",
-      "quantidade": "50kg",
-      "preco": "R$ 4,00/kg",
+      "quantidade": 50,
+      "preco": 4,
       "telefone": "(11) 91234-5678",
       "contato": "joao.silva@email.com"
     },
     {
-      "id": "02",
       "nome": "Maria Oliveira",
       "plantio": "Soja",
-      "quantidade": "40kg",
-      "preco": "R$ 4,50/kg",
+      "quantidade": 40,
+      "preco": 4.50,
       "telefone": "(34) 98765-4321",
       "contato": "maria.oliveira@email.com"
     },
     {
-      "id": "03",
       "nome": "José Santos",
       "plantio": "Café",
-      "quantidade": "20kg",
-      "preco": "R$ 30,00/kg",
+      "quantidade": 20,
+      "preco": 30,
       "telefone": "(31) 99876-5432",
       "contato": "jose.santos@email.com"
     },
     {
-      "id": "04",
       "nome": "Ana Costa",
       "plantio": "Feijão",
       "quantidade": "30kg",
@@ -75,20 +71,18 @@
       "contato": "ana.costa@email.com"
     },
     {
-      "id": "05",
       "nome": "Carlos Ferreira",
       "plantio": "Tomate",
-      "quantidade": "25kg",
-      "preco": "R$ 7,00/kg",
+      "quantidade": 25,
+      "preco": 7,
       "telefone": "(21) 98765-1234",
       "contato": "carlos.ferreira@email.com"
     },
     {
-      "id": "06",
       "nome": "Fernanda Almeida",
       "plantio": "Mandioca",
-      "quantidade": "60kg",
-      "preco": "R$ 3,20/kg",
+      "quantidade": 60,
+      "preco": 3.20,
       "telefone": "(11) 98432-2345",
       "contato": "fernanda.almeida@email.com"
     }
@@ -97,49 +91,49 @@
     {
       "plantio": "Milho",
       "recomendacoes": [        
-        "Plantio direto: Manter a cobertura do solo com palha ou restos vegetais para reduzir a erosão e melhorar a retenção de água.",
-        "Controle biológico de pragas: Usar insetos benéficos, como crisopídeos, para combater pragas sem o uso de agrotóxicos.",
-        "Irrigação eficiente: Usar sistemas de irrigação por gotejamento para garantir que a água seja usada de forma precisa e controlada."
+        "Manter a cobertura do solo reduzir a erosão e melhorar a retenção de água.",
+        "Usar insetos benéficos para combater pragas sem o uso de agrotóxicos.",
+        "Usar sistemas de irrigação por gotejamento"
       ]
     },
     {
       "plantio": "Soja",
       "recomendacoes": [
-        "Fixação biológica de nitrogênio (FBN): Aproveitar a capacidade natural da soja de fixar nitrogênio no solo, usando bactérias fixadoras para reduzir a necessidade de fertilizantes nitrogenados.",
-        "Adubação verde: Cultivar plantas como crotalária ou feijão-guandu entre os ciclos de soja para melhorar a matéria orgânica e a fertilidade do solo.",
-        "Controle biológico de pragas: Utilizar predadores naturais como joaninhas para controlar pulgões e outras pragas sem o uso excessivo de agrotóxicos."        
+        "Aproveitar a capacidade natural da soja de fixar nitrogênio no solo.",
+        "Cultivar plantas entre os ciclos de soja para melhorar a fertilidade do solo.",
+        "Utilizar predadores naturais como joaninhas para controlar pulgões e outras pragas."        
       ]
     },
     {
       "plantio": "Café",
       "recomendacoes": [
-        "Sombreamento agroflorestal: Plantar árvores nativas entre as fileiras de café para reduzir a erosão, melhorar a biodiversidade e aumentar a resiliência do café às mudanças climáticas.",
-        "Uso de compostagem: Aplicar resíduos da lavoura como cascas de café e folhas para manter o solo fértil e equilibrado em nutrientes.",
-        "Controle de irrigação: Implementar um sistema de irrigação que minimize o uso de água, adaptando as técnicas de acordo com a necessidade real da plantação."
+        "Plantar árvores entre as fileiras de café para aumentar a resiliência contra mudanças climáticas.",
+        "Aplicar resíduos da lavoura para manter o solo fértil e equilibrado em nutrientes.",
+        "Implementar um sistema de irrigação que minimize o uso de água."
       ]
     },
     {
       "plantio": "Mandioca",
       "recomendacoes": [
-        "Plantio em curvas de nível: Plantar em linhas ao longo do contorno da elevação para evitar a erosão do solo em áreas inclinadas.",
-        "Controle de erosão: Manter a cobertura do solo e evitar o desmatamento ao redor da área plantada para reduzir a erosão.",
-        "Diversificação de culturas: Intercalar a mandioca com outras culturas para melhorar a biodiversidade e a resiliência do solo."
+        "Plantar em linhas ao longo do contorno da elevação para evitar a erosão do solo em áreas inclinadas.",
+        "Manter a cobertura do solo ao redor da área plantada para reduzir a erosão.",
+        "Intercalar a mandioca com outras culturas para melhorar a biodiversidade e a resiliência do solo."
       ]
     },
     {
       "plantio": "Feijão",
       "recomendacoes": [
-        "Policultivo: Plantar feijão com culturas complementares, como milho ou mandioca, que ajudam a diversificar os nutrientes do solo e melhorar a saúde das plantas.",
-        "Irrigação eficiente: Usar sistemas de irrigação por gotejamento ou aspersão para garantir que a água seja usada de forma controlada e precisa, evitando o desperdício.",
-        "Adubação orgânica: Incorporar compostagem e esterco no solo para aumentar a fertilidade sem recorrer a fertilizantes sintéticos."        
+        "Plantar feijão com culturas complementares que ajudam a diversificar os nutrientes do solo.",
+        "Usar sistemas de irrigação por gotejamento ou aspersão para evitar o desperdício.",
+        "Incorporar compostagem e esterco no solo para aumentar a fertilidade."        
       ]
     },
     {
       "plantio": "Tomate",
       "recomendacoes": [
-        "Tutoramento: Utilizar estacas ou treliças para manter as plantas de tomate erguidas, garantindo melhor exposição à luz e reduzindo o risco de doenças.",
-        "Irrigação por gotejamento: Usar sistemas de irrigação por gotejamento para fornecer água diretamente às raízes, evitando o encharcamento e doenças.",
-        "Cobertura do solo: Manter o solo coberto com palha ou material orgânico para conservar a umidade e reduzir o crescimento de ervas daninhas."        
+        "Utilizar estacas ou treliças para manter as plantas de tomate erguidas.",
+        "Usar sistemas de irrigação por gotejamento para fornecer água diretamente às raízes, evitando o encharcamento e doenças.",
+        "Manter o solo coberto com  material orgânico para reduzir o crescimento de ervas daninhas."        
       ]
     }
   ]

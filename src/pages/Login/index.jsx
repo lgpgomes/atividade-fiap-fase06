@@ -1,11 +1,11 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./login.css";
-import { UserContext } from "../../services/Context";
+import { useGlobalContext } from "../../services/Context";
 
 function Login() {
   const navigate = useNavigate();
-  const {usuario, setIsAuthenticated} = useContext(UserContext)
+  const {usuario, setIsAuthenticated} = useGlobalContext();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 

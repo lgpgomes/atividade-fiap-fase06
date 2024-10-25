@@ -34,7 +34,7 @@
 }
 
 
-.formulario-cadastro input {
+.formulario-cadastro input, .formulario-cadastro select {
     display: flex;
     background: none;
     padding: 12px 10px;
@@ -48,7 +48,7 @@
     font-size: 14px;
 }
 
-.formulario-cadastro input::placeholder {
+.formulario-cadastro input::placeholder, .formulario-cadastro select::placeholder {
     font-size: 14px;
     color: #184015a1;
     font-family: Inter, sans-serif;

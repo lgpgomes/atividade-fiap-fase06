@@ -1,11 +1,11 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./cadastro.css";
-import { UserContext } from "../../services/Context";
+import { useGlobalContext } from "../../services/Context";
 
 function Cadastro() {
   const navigate = useNavigate();
-  const { setUsuario } = useContext(UserContext);
+  const { setUsuario } = useGlobalContext();
 
   const [formData, setFormData] = useState({
     nome: "",

@@ -1,13 +1,12 @@
-import { useContext } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
 import Dashboard from "./components/Dashboard";
-import { UserContext } from "./services/Context";
+import { useGlobalContext } from "./services/Context";
 
 function App() {
 
-  const {isAuthenticated} = useContext(UserContext)
+  const {isAuthenticated} = useGlobalContext();
   
   return (
     <Router>

@@ -1,14 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import "./Sidebar.css";
 import MenuLink from "../MenuLink";
-import { useContext } from "react";
-import { UserContext } from "../../services/Context";
+import { useGlobalContext} from "../../services/Context";
 
 function Sidebar() {
   const navigate = useNavigate();
-  const { setIsAuthenticated, usuario } = useContext(UserContext);
+  const { setIsAuthenticated, usuario, limparVendedores } = useGlobalContext();
   const handleLogout = () => {
     setIsAuthenticated(false);
+    limparVendedores(); // Limpa os vendedores
     navigate("/login"); // Redireciona para a página de login
   };
 

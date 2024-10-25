@@ -1,100 +1,27 @@
-import "./PlantiosExistentes.css"
-import MilhoImg from "/img/milho.png"
-import CafeImg from "/img/cafe.png"
-import TomateImg from "/img/tomate.png"
+import "./PlantiosExistentes.css";
+import { useGlobalContext } from "../../../services/Context";
+import CardPlantio from "../../../components/Card";
 
 function PlantiosExistentes() {
+  const { plantiosCadastrados } = useGlobalContext();
   return (
     <div className="plantios-existentes">
-      <h3>
-        Plantios atuais
-      </h3>
+      <h3>Plantios atuais</h3>
 
       <div className="plantios">
-        <div className="plantio">
-          <div className="plantio-img">
-            <img src={MilhoImg} alt="" />
-          </div>
-          <div className="plantio-nome">
-            Milho
-          </div>
-          <div className="plantio-area">
-            2 hectares
-          </div>
-          <div className="plantio-recomendacoes">
-            <div className="recomendacoes-titulo">
-              Recomendações
+        {plantiosCadastrados.length > 0 ? (
+          plantiosCadastrados.map((plantio, index) => (
+            <div key={index}>
+              <CardPlantio
+                imgSource={`/img/${plantio.plantio.toLowerCase()}.png`}
+                tipoPlantio={plantio.plantio}
+                area={plantio.area}
+              />
             </div>
-            <ul>
-              <li>
-                Usar plantas de cobertura
-              </li>
-              <li>
-                Rotativade de Culturas
-              </li>
-              <li>
-                Plantar sem arar o solo
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="plantio">
-          <div className="plantio-img">
-            <img src={CafeImg} alt="" />
-          </div>
-          <div className="plantio-nome">
-            Café
-          </div>
-          <div className="plantio-area">
-            1 hectare
-          </div>
-          <div className="plantio-recomendacoes">
-            <div className="recomendacoes-titulo">
-              Recomendações
-            </div>
-            <ul>
-              <li>
-                Plantar árvores perto do café
-              </li>
-              <li>
-                Aproveitar o restante da colheita como adubo
-              </li>
-              <li>
-                Usar pesticidas naturais
-              </li>
-            </ul>
-          </div>
-        </div>
-
-
-        <div className="plantio">
-          <div className="plantio-img">
-            <img src={TomateImg} alt="" />
-          </div>
-          <div className="plantio-nome">
-            Tomate
-          </div>
-          <div className="plantio-area">
-            1 hectare
-          </div>
-          <div className="plantio-recomendacoes">
-            <div className="recomendacoes-titulo">
-              Recomendações
-            </div>
-            <ul>
-              <li>
-                Cobrir a plantação
-              </li>
-              <li>
-                Adubar com líquidos naturais
-              </li>
-              <li>
-                Regar as raízes diretamente
-              </li>
-            </ul>
-          </div>
-        </div>
+          ))
+        ) : (
+          <div>Nenhum plantio cadastrado.</div>
+        )}
       </div>
     </div>
   );

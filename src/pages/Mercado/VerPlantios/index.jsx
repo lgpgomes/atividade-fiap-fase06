@@ -1,8 +1,12 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import "./VerPlantios.css";
+import { useGlobalContext } from "../../../services/Context";
 
-function VerPlantios({ plantiosVenda }) {
+function VerPlantios() {
+
+  const {vendedores} = useGlobalContext();
+
   const [plantioTipo, setPlantioTipo] = useState("");
   const [agricultor, setAgricultor] = useState("");
   const [preco, setPreco] = useState("");
@@ -19,9 +23,9 @@ function VerPlantios({ plantiosVenda }) {
           >
             <option>Todos</option>
             {/* Implementar opções para filtrar por tipo de plantio */}
-            {plantiosVenda.map((plantios, index) => {
+            {vendedores.map((plantios, index) => {
               return (
-                <option key={index} value={plantios}>
+                <option key={index} value={plantios.plantio}>
                   {plantios.plantio}
                 </option>
               );
@@ -53,7 +57,7 @@ function VerPlantios({ plantiosVenda }) {
       </div>
       {/* Implementar lógica para listar os plantios */}
       <div className="plantiosVenda">
-        {plantiosVenda.map((vendedor, index) => {
+        {vendedores.map((vendedor, index) => {
           return (
             <div key={index} className="plantio-card">
               <table className="plantio-item">
@@ -66,11 +70,11 @@ function VerPlantios({ plantiosVenda }) {
                 </tr>
                 <tr>
                   <th>Quantidade: </th>
-                  <td>{vendedor.quantidade}</td>
+                  <td>{vendedor.quantidade}kg</td>
                 </tr>
                 <tr>
                   <th>Preço: </th>
-                  <td>{vendedor.preco}</td>
+                  <td>{vendedor.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}/kg</td>
                 </tr>
                 <tr>
                   <th>Contato: </th>

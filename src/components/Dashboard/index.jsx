@@ -1,5 +1,5 @@
 import "./Dashboard.css";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import Sidebar from "../Sidebar";
 import Monitoramento from "../../pages/Monitoramento";
@@ -12,13 +12,12 @@ import DadosSolo from "../../pages/Monitoramento/DadosSolo";
 import PlantiosExistentes from "../../pages/Monitoramento/PlantiosExistentes";
 import VenderPlantio from "../../pages/Mercado/VenderPlantio";
 import VerPlantios from "../../pages/Mercado/VerPlantios";
-import plantios from "../../assets/json";
-import { UserContext } from "../../services/Context";
+import { useGlobalContext } from "../../services/Context";
 
 function Dashboard() {
   const navigator = useNavigate();
   const [plantioSelecionado, setPlantioSelecionado] = useState("");
-  const { usuario } = useContext(UserContext);
+  const { usuario } = useGlobalContext();
 
   const handleEscolherPlantio = (plantio) => {
     // Redireciona para a página de cadastro do plantio escolhido
@@ -26,7 +25,7 @@ function Dashboard() {
     navigator(`/dashboard/praticas-agricolas/cadastrar-plantios`);
   };
 
-  console.log(plantios.data);
+  // console.log(plantios.data);
 
   return (
     <div className="dashboard">
@@ -92,11 +91,11 @@ function Dashboard() {
               {/* Rotas de Mercado */}
               <Route
                 path="vender-plantio"
-                element={<VenderPlantio tiposPlantios={plantios.data} />}
+                element={<VenderPlantio />}
               />
               <Route
                 path="ver-plantios"
-                element={<VerPlantios plantiosVenda={plantios.vendedores} />}
+                element={<VerPlantios />}
               />
             </Route>
           </Routes>
@@ -110,8 +109,8 @@ function Dashboard() {
             {/* Rotas de Mercado */}
             <Route path="mercado" element={<Mercado />}>
               {/* Rotas de Mercado */}
-              <Route path="vender-plantio" element={<VenderPlantio tiposPlantios={plantios.data} />} />
-              <Route path="ver-plantios" element={<VerPlantios plantiosVenda={plantios.vendedores} />} />
+              <Route path="vender-plantio" element={<VenderPlantio />} />
+              <Route path="ver-plantios" element={<VerPlantios />} />
             </Route>
           </Routes>
         )}
