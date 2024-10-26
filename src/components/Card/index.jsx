@@ -22,9 +22,12 @@ export default function CardPlantio({
         <img src={imgSource} alt={tipoPlantio} />
       </div>
       <div className="plantio-nome">{tipoPlantio}</div>
-      <div className="plantio-nome">
-        {area} {area > 1 ? "hectares" : "hectar"}
-      </div>
+
+      {area > 0 ? (
+        <div className="plantio-nome">
+          {area} {area > 1 ? "hectares" : "hectar"}
+        </div>
+      ) : null}
 
       <div className="plantio-recomendacoes">
         <div className="recomendacoes-titulo">Recomendações</div>

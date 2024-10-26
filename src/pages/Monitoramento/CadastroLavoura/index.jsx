@@ -59,6 +59,7 @@ function CadastroLavoura() {
               <input
                 name="area"
                 placeholder="8 hectares"
+                min={0}
                 value={dadosLavoura.area}
                 onChange={handleInputChange}
                 type="number"

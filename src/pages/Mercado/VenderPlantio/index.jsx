@@ -75,6 +75,7 @@ function VenderPlantio() {
             id="quantidade"
             name="quantidade"
             type="number"
+            min={0}
             placeholder="kg ou l"
             value={plantioVenda.quantidade}
             onChange={handleInputChange}
@@ -87,6 +88,8 @@ function VenderPlantio() {
             id="preco"
             name="preco"
             type="number"
+            min={0}
+            step={0.01}
             value={plantioVenda.preco}
             onChange={handleInputChange}
             placeholder="preço/kg ou l"

@@ -65,8 +65,8 @@
     {
       "nome": "Ana Costa",
       "plantio": "Feijão",
-      "quantidade": "30kg",
-      "preco": "R$ 8,00/kg",
+      "quantidade": 30,
+      "preco": 8,
       "telefone": "(62) 91234-8765",
       "contato": "ana.costa@email.com"
     },

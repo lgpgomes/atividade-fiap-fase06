@@ -1,15 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./VerPlantios.css";
 import { useGlobalContext } from "../../../services/Context";
 
 function VerPlantios() {
-  const { vendedores } = useGlobalContext();
+  const { vendedores, plantioRecomendados } = useGlobalContext();
 
   const [filtros, setFiltros] = useState({
     nome: "",
     plantio: "",
     preco: "",
   });
+
+  const limparFiltros = () => {
+    setFiltros({
+      nome: "",
+      plantio: "",
+      preco: "",
+    });
+  };
 
   // Função para manipular alterações nos filtros
   const handleFilterChange = (e) => {
@@ -27,8 +35,13 @@ function VerPlantios() {
       vendedor.plantio.toLowerCase().includes(filtros.plantio.toLowerCase());
     const filtroPreco =
       filtros.preco === "" || vendedor.preco <= parseFloat(filtros.preco);
+    console.log(filtroNome && filtroPreco && filtroPlantio);
     return filtroNome && filtroPlantio && filtroPreco;
   });
+
+  useEffect(() => {
+    console.log(vendedoresFiltrados);
+  }, [vendedoresFiltrados]);
 
   return (
     <div className="verPlantios">
@@ -41,9 +54,9 @@ function VerPlantios() {
             value={filtros.plantio}
             onChange={handleFilterChange}
           >
-            <option>Todos</option>
+            <option value={""}>Todos</option>
             {/* Implementar opções para filtrar por tipo de plantio */}
-            {vendedores.map((plantios, index) => {
+            {plantioRecomendados.map((plantios, index) => {
               return (
                 <option key={index} value={plantios.plantio}>
                   {plantios.plantio}
@@ -70,17 +83,21 @@ function VerPlantios() {
             id="preco"
             name="preco"
             type="number"
+            min={0}
             value={filtros.preco}
             onChange={handleFilterChange}
             placeholder="Preço máximo"
             required
           />
         </div>
+        <div>
+          <button onClick={limparFiltros}>Limpar</button>
+        </div>
       </div>
       {/* Implementar lógica para listar os plantios */}
       <div className="plantiosVenda">
         {vendedoresFiltrados.length > 0 ? (
-          vendedores.map((vendedor, index) => {
+          vendedoresFiltrados.map((vendedor, index) => {
             return (
               <div key={index} className="plantio-card">
                 <table className="plantio-item">
@@ -98,7 +115,7 @@ function VerPlantios() {
                   <tr>
                     <th>Preço: </th>
                     <td>
-                      {vendedor.preco.toLocaleString("pt-br", {
+                      {parseFloat(vendedor.preco).toLocaleString("pt-br", {
                         style: "currency",
                         currency: "BRL",
                       })}

@@ -59,6 +59,7 @@ function CadastrarPlantios({ plantioEscolhido }) {
             id="area"
             name="area"
             type="number"
+            min={0}
             placeholder="2 hectares"
             value={plantioCadastrado.area}
             onChange={handleInputChange}
