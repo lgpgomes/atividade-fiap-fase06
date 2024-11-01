@@ -5,7 +5,7 @@ import { useGlobalContext } from "../../services/Context";
 
 function Login() {
   const navigate = useNavigate();
-  const {usuario, setIsAuthenticated} = useGlobalContext();
+  const { usuario, setIsAuthenticated } = useGlobalContext();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -17,9 +17,9 @@ function Login() {
       // Redirecionar para o Dashboard
       navigate("/dashboard");
     } else if (setIsAuthenticated) {
-      alert("Primeiro você deve estar cadastrado!")
+      alert("Primeiro você deve estar cadastrado!");
     } else {
-      alert("E-mail ou senha inválidos!")
+      alert("E-mail ou senha inválidos!");
     }
   };
 
@@ -61,6 +61,12 @@ function Login() {
                   </button>
                 </div>
               </form>
+            </div>
+
+            <div className="link-video">
+              <a href="https://drive.google.com/file/d/1f3FSXnP-6fa81Of1kOeIX_Ax54gu4CeH/view?usp=sharing" target="_blank">
+                Link para a apresentação do site
+              </a>
             </div>
           </div>
         </div>
