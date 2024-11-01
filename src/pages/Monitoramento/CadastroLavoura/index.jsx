@@ -1,9 +1,9 @@
 import { useGlobalContext } from "../../../services/Context";
 import "./CadastroLavoura.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function CadastroLavoura() {
-  const { cadastrarPlantio, plantiosCadastrados, plantioRecomendados} =
+  const { cadastrarPlantio, plantioRecomendados} =
     useGlobalContext();
 
   const [dadosLavoura, setDadosLavoura] = useState({
@@ -27,11 +27,6 @@ function CadastroLavoura() {
       alert("Preencha todos os campos!");
     }
   }
-
-  useEffect(() => {
-    console.log("Plantios Recomendados:", plantioRecomendados)
-    console.log("Plantios Cadastrados:", plantiosCadastrados);
-  }, [plantiosCadastrados, plantioRecomendados]);
 
   return (
     <div className="cadastro-lavoura">

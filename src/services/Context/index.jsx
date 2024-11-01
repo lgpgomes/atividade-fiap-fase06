@@ -42,8 +42,10 @@ export const UserProvider = ({ children }) => {
     (plantio) =>
       !plantiosCadastrados.some(
         (cadastrado) => cadastrado.plantio === plantio.plantio
-      ) // Modifique esta linha
+      )
   );
+
+  const tiposPlantios = plantios.filter((plantio) => plantio.plantio)
 
   const limparVendedores = () => {
     setVendedores(json.vendedores);
@@ -60,6 +62,7 @@ export const UserProvider = ({ children }) => {
         plantioRecomendados,
         plantiosCadastrados,
         plantios,
+        tiposPlantios,
         vendedores, 
         cadastrarVendedor,
         limparVendedores

@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./VerPlantios.css";
 import { useGlobalContext } from "../../../services/Context";
 
 function VerPlantios() {
-  const { vendedores, plantioRecomendados } = useGlobalContext();
+  const { vendedores, tiposPlantios } = useGlobalContext();
 
   const [filtros, setFiltros] = useState({
     nome: "",
@@ -35,19 +35,14 @@ function VerPlantios() {
       vendedor.plantio.toLowerCase().includes(filtros.plantio.toLowerCase());
     const filtroPreco =
       filtros.preco === "" || vendedor.preco <= parseFloat(filtros.preco);
-    console.log(filtroNome && filtroPreco && filtroPlantio);
     return filtroNome && filtroPlantio && filtroPreco;
   });
-
-  useEffect(() => {
-    console.log(vendedoresFiltrados);
-  }, [vendedoresFiltrados]);
 
   return (
     <div className="verPlantios">
       <div className="filtro-btn">
         <div>
-          <label htmlFor="tipoPlantio">Tipo de Plantio:</label>
+          <label htmlFor="plantio">Tipo de Plantio:</label>
           <select
             id="plantio"
             name="plantio"
@@ -56,7 +51,7 @@ function VerPlantios() {
           >
             <option value={""}>Todos</option>
             {/* Implementar opções para filtrar por tipo de plantio */}
-            {plantioRecomendados.map((plantios, index) => {
+            {tiposPlantios.map((plantios, index) => {
               return (
                 <option key={index} value={plantios.plantio}>
                   {plantios.plantio}

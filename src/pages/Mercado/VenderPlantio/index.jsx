@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { useGlobalContext } from "../../../services/Context";
 import "./VenderPlantio.css";
-import { useEffect } from "react";
 function VenderPlantio() {
-  const { plantioRecomendados, plantiosCadastrados, usuario, cadastrarVendedor, vendedores } =
+  const { plantioRecomendados, plantiosCadastrados, usuario, cadastrarVendedor} =
     useGlobalContext();
 
   const [plantioVenda, setPlantioVenda] = useState({
@@ -21,17 +20,13 @@ function VenderPlantio() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(plantioVenda)
-    if(plantioVenda.nome !== "" && plantioVenda.preco > 0 && plantioVenda.quantidade > 0) {
+    if(plantioVenda.plantio !== "" && plantioVenda.preco > 0 && plantioVenda.quantidade > 0) {
       cadastrarVendedor(plantioVenda)
+      alert(`Plantio colocado para venda com sucesso!`);
+    }else {
+      alert("Preencha todos os campos corretamente!");
     }
-    alert(`Plantio colocado para venda com sucesso!`);
   };
-
-  useEffect(() => {
-    console.log("Vendedores: ", vendedores)
-  }, [vendedores])
-  
 
   return (
     <div className="cadastrarPlantio">
