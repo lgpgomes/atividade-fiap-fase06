@@ -64,7 +64,7 @@ function Login() {
             </div>
 
             <div className="link-video">
-              <a href="https://drive.google.com/file/d/1f3FSXnP-6fa81Of1kOeIX_Ax54gu4CeH/view?usp=sharing" target="_blank">
+              <a href="https://youtu.be/RLw7-SYl1iI" target="_blank">
                 Link para a apresentação do site
               </a>
             </div>

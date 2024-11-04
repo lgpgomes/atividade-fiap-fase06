@@ -24,3 +24,4 @@ Este é um projeto React configurado com Vite
 Acesse: [http://localhost:5173](http://localhost:5173)
 
 Versão Online: [https://atividade-fiap-fase06.vercel.app](https://atividade-fiap-fase06.vercel.app/)
+Apresentação em Vídeo [https://youtu.be/RLw7-SYl1iI], (https://youtu.be/RLw7-SYl1iI)
